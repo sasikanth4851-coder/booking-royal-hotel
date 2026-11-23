@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b35">
+  <title>Serene Stay | Boutique Hotel</title>
+  <style>
+    :root{--green:#173b35;--mint:#e9f0e9;--gold:#c49a5a;--ink:#202824;--muted:#68736d;--paper:#fbfaf7}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1140px,92%);margin:auto}
+    header{position:absolute;z-index:5;top:0;left:0;right:0;color:white;padding:22px 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:Georgia,serif;font-size:1.55rem;letter-spacing:.04em}.brand span{color:#e3c18e}.navlinks{display:flex;gap:26px;font-size:.92rem}.navlinks a:hover{color:#e3c18e}
+    .btn{display:inline-block;background:var(--gold);color:#172b25;padding:12px 21px;border:0;border-radius:3px;font-weight:700;cursor:pointer;transition:.2s}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.outline{background:transparent;border:1px solid rgba(255,255,255,.75);color:white}
+    .hero{min-height:680px;display:grid;align-items:center;color:white;background:linear-gradient(90deg,rgba(8,25,22,.78),rgba(8,25,22,.25)),url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero-copy{padding-top:72px;max-width:650px}.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;color:var(--gold);font-weight:800}.hero h1{font:clamp(3rem,7vw,5.8rem)/1.02 Georgia,serif;margin:18px 0}.hero p{font-size:1.1rem;color:#edf1ed;max-width:540px;margin-bottom:30px}
+    .booking-strip{position:relative;margin-top:-44px;z-index:2;background:white;box-shadow:0 15px 40px #152b2418;padding:22px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:14px;align-items:end;border-radius:5px}
+    label{display:block;font-size:.78rem;font-weight:800;color:var(--muted);margin-bottom:6px}input,select{width:100%;padding:12px;border:1px solid #d9dfd9;border-radius:3px;background:white;font:inherit;color:var(--ink)}
+    section{padding:86px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 42px}.section-head h2{font:clamp(2.2rem,4vw,3.3rem)/1.1 Georgia,serif;color:var(--green);margin:10px 0}.section-head p{color:var(--muted)}
+    .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.room{background:white;border-radius:5px;overflow:hidden;box-shadow:0 8px 28px #152b2410}.room img{width:100%;height:225px;object-fit:cover;display:block}.room-body{padding:22px}.room-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.room h3{font:1.45rem Georgia,serif;color:var(--green);margin:0}.price{font-weight:800;color:var(--green);white-space:nowrap}.price small{display:block;font-size:.68rem;color:var(--muted);font-weight:500;text-align:right}.room p{color:var(--muted);font-size:.93rem}.features{display:flex;gap:12px;flex-wrap:wrap;font-size:.78rem;color:#52645b;padding-top:10px;border-top:1px solid #edf0ec}
+    .facilities{background:var(--mint)}.facility-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.facility{background:#fff;padding:25px 18px;text-align:center;border-radius:4px}.facility .symbol{font-size:1.8rem}.facility h3{font:1.15rem Georgia,serif;color:var(--green);margin:8px 0 4px}.facility p{font-size:.85rem;color:var(--muted);margin:0}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.split img{width:100%;height:420px;object-fit:cover;border-radius:4px}.split h2{font:clamp(2.2rem,4vw,3.3rem)/1.1 Georgia,serif;color:var(--green);margin:12px 0}.split p{color:var(--muted)}
+    .reviews{background:#173b35;color:white}.reviews .section-head h2{color:white}.reviews .section-head p{color:#d4ded8}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.review{background:#234b43;padding:25px;border-radius:4px}.stars{color:#e6bd7f;letter-spacing:3px}.review blockquote{margin:14px 0;color:#f0f4f1}.review strong{font-size:.9rem}.review small{display:block;color:#c4d2ca}
+    .booking{background:#f0eee7}.booking-card{max-width:800px;margin:auto;background:white;padding:32px;box-shadow:0 12px 35px #152b2410;border-radius:5px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.form-grid .wide{grid-column:1/-1}.booking-card h3{font:1.8rem Georgia,serif;color:var(--green);margin:0 0 20px}.notice{font-size:.8rem;color:var(--muted);margin-top:12px}.success{display:none;padding:12px;background:#e7f3e9;color:#1d5b35;margin-top:14px;border-radius:3px}
+    footer{background:#102b26;color:#dce6df;padding:35px 0}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{margin:5px 0;color:#aebfb5;font-size:.85rem}
+    @media(max-width:850px){.navlinks{display:none}.booking-strip{grid-template-columns:repeat(2,1fr)}.booking-strip .btn{grid-column:1/-1}.rooms{grid-template-columns:1fr 1fr}.facility-grid{grid-template-columns:1fr 1fr}.split{gap:28px}.review-grid{grid-template-columns:1fr}}
+    @media(max-width:580px){.hero{min-height:620px}.booking-strip{grid-template-columns:1fr;margin-top:-25px}.rooms,.split{grid-template-columns:1fr}.split img{height:280px}section{padding:65px 0}.facility-grid{grid-template-columns:1fr 1fr}.booking-card{padding:22px}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#">SERENE <span>STAY</span></a><nav class="navlinks"><a href="#rooms">Rooms</a><a href="#facilities">Facilities</a><a href="#reviews">Reviews</a><a href="#booking">Contact</a></nav><a class="btn outline" href="#booking">Book a stay</a></div></header>
+<main>
+  <section class="hero"><div class="wrap hero-copy"><div class="eyebrow">A little escape, a lot of comfort</div><h1>Stay somewhere<br>that feels special.</h1><p>Thoughtful rooms, warm hospitality and quiet moments. Make your next getaway feel effortless at Serene Stay.</p><a class="btn" href="#rooms">Explore rooms</a></div></section>
+  <div class="wrap"><form class="booking-strip" id="quick-search">
+    <div><label for="arrival">CHECK IN</label><input id="arrival" type="date" required></div>
+    <div><label for="departure">CHECK OUT</label><input id="departure" type="date" required></div>
+    <div><label for="guests">GUESTS</label><select id="guests"><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option></select></div>
+    <div><label for="room-type">ROOM TYPE</label><select id="room-type"><option>Any room</option><option>Classic Room</option><option>Deluxe Room</option><option>Garden Suite</option></select></div>
+    <button class="btn" type="submit">Check availability</button>
+  </form></div>
+  <section id="rooms"><div class="wrap"><div class="section-head"><div class="eyebrow">Stay your way</div><h2>Rooms & suites</h2><p>Find the space that suits your trip, from a cosy hideaway to a generous suite.</p></div>
+    <div class="rooms">
+      <article class="room"><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80" alt="Classic hotel room with comfortable bed"><div class="room-body"><div class="room-top"><h3>Classic Room</h3><div class="price">₹3,499<small>per night</small></div></div><p>A calm, comfortable retreat with everything you need for a restful stay.</p><div class="features"><span>🛏 Queen bed</span><span>📶 Wi-Fi</span><span>🚿 Ensuite</span></div></div></article>
+      <article class="room"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80" alt="Bright deluxe hotel room"><div class="room-body"><div class="room-top"><h3>Deluxe Room</h3><div class="price">₹4,999<small>per night</small></div></div><p>Extra room to unwind, with a lounge corner and elevated in-room comforts.</p><div class="features"><span>🛏 King bed</span><span>☕ Coffee set</span><span>🌇 City view</span></div></div></article>
+      <article class="room"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Elegant garden suite interior"><div class="room-body"><div class="room-top"><h3>Garden Suite</h3><div class="price">₹7,499<small>per night</small></div></div><p>A spacious suite with a separate sitting area for a slower kind of escape.</p><div class="features"><span>🛏 King bed</span><span>🛋 Living area</span><span>🌿 Garden view</span></div></div></article>
+    </div><p class="notice">Displayed prices are sample rates in INR and may vary by date, taxes and availability.</p>
+  </div></section>
+  <section class="facilities" id="facilities"><div class="wrap"><div class="section-head"><div class="eyebrow">Made for easy days</div><h2>Facilities & comforts</h2><p>Everything you need to make your stay relaxing, convenient and memorable.</p></div><div class="facility-grid">
+    <div class="facility"><div class="symbol">🍽️</div><h3>All-day dining</h3><p>Fresh, flavourful meals and room service.</p></div>
+    <div class="facility"><div class="symbol">🏊</div><h3>Swimming pool</h3><p>A refreshing break whenever you need one.</p></div>
+    <div class="facility"><div class="symbol">💆</div><h3>Wellness spa</h3><p>Unwind with a range of relaxing treatments.</p></div>
+    <div class="facility"><div class="symbol">📶</div><h3>Free Wi-Fi</h3><p>Stay connected throughout your visit.</p></div>
+    <div class="facility"><div class="symbol">🚗</div><h3>Parking</h3><p>Convenient on-site guest parking.</p></div>
+    <div class="facility"><div class="symbol">🏋️</div><h3>Fitness room</h3><p>Keep up with your routine while away.</p></div>
+    <div class="facility"><div class="symbol">🛎️</div><h3>24/7 assistance</h3><p>Our front desk is here around the clock.</p></div>
+    <div class="facility"><div class="symbol">✈️</div><h3>Airport transfers</h3><p>Arrange a smooth arrival and departure.</p></div>
+  </div></div></section>
+  <section><div class="wrap split"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1100&q=85" alt="Hotel pool surrounded by greenery"><div><div class="eyebrow">The Serene experience</div><h2>Slow down. Settle in. Feel at home.</h2><p>From the welcome at the door to the little details in your room, our aim is simple: make every part of your stay feel considered.</p><p>Enjoy inviting spaces, friendly service and room to make the most of your time away.</p><a class="btn" href="#booking">Plan your stay</a></div></div></section>
+  <section class="reviews" id="reviews"><div class="wrap"><div class="section-head"><div class="eyebrow">Guest stories</div><h2>Kind words from our guests</h2><p>A few sample testimonials for this website template.</p></div><div class="review-grid">
+    <article class="review"><div class="stars">★★★★★</div><blockquote>“Beautiful room, thoughtful service and a really peaceful atmosphere. We had a lovely stay.”</blockquote><strong>Priya R.</strong><small>Weekend guest</small></article>
+    <article class="review"><div class="stars">★★★★★</div><blockquote>“The staff were welcoming and the facilities made our trip feel easy from start to finish.”</blockquote><strong>Arjun M.</strong><small>Family stay</small></article>
+    <article class="review"><div class="stars">★★★★☆</div><blockquote>“Comfortable beds, great breakfast and a relaxing pool area. Would happily visit again.”</blockquote><strong>Neha S.</strong><small>Leisure traveller</small></article>
+  </div></div></section>
+  <section class="booking" id="booking"><div class="wrap"><div class="section-head"><div class="eyebrow">Your getaway starts here</div><h2>Request a reservation</h2><p>Send your preferred dates and room choice. This demo form shows a confirmation on this page.</p></div><form class="booking-card" id="reservation"><h3>Booking enquiry</h3><div class="form-grid">
+    <div><label for="name">FULL NAME</label><input id="name" placeholder="Your name" required></div>
+    <div><label for="email">EMAIL ADDRESS</label><input id="email" type="email" placeholder="you@example.com" required></div>
+    <div><label for="checkin">CHECK-IN DATE</label><input id="checkin" type="date" required></div>
+    <div><label for="checkout">CHECK-OUT DATE</label><input id="checkout" type="date" required></div>
+    <div><label for="booking-room">ROOM CATEGORY</label><select id="booking-room"><option>Classic Room</option><option>Deluxe Room</option><option>Garden Suite</option></select></div>
+    <div><label for="booking-guests">NUMBER OF GUESTS</label><select id="booking-guests"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+    <div class="wide"><label for="message">SPECIAL REQUESTS (OPTIONAL)</label><input id="message" placeholder="Anything we should know?"></div>
+    <div class="wide"><button class="btn" type="submit">Send booking request</button><p class="notice">Demo only: this form does not send data or confirm a real reservation.</p><div class="success" id="success" role="status">Thank you! Your sample booking request is ready. Please contact the hotel directly to confirm a real reservation.</div></div>
+  </div></form></div></section>
+</main>
+<footer><div class="wrap footer"><div><a class="brand" href="#">SERENE <span>STAY</span></a><p>A welcoming place to pause and recharge.</p></div><div><strong>Contact</strong><p>hello@serenestay.example</p><p>+91 00000 00000</p></div><div><strong>Explore</strong><p><a href="#rooms">Rooms</a> · <a href="#facilities">Facilities</a> · <a href="#booking">Bookings</a></p><p>© 2026 Serene Stay. Demo website.</p></div></div></footer>
+<script>
+  const today = new Date().toISOString().split('T')[0];
+  document.querySelectorAll('input[type="date"]').forEach(el => el.min = today);
+  document.getElementById('quick-search').addEventListener('submit', e => {
+    e.preventDefault();
+    const arrival = document.getElementById('arrival').value;
+    const departure = document.getElementById('departure').value;
+    if (departure <= arrival) { alert('Check-out date must be after check-in date.'); return; }
+    document.getElementById('checkin').value = arrival;
+    document.getElementById('checkout').value = departure;
+    document.getElementById('booking-room').value = document.getElementById('room-type').value === 'Any room' ? 'Classic Room' : document.getElementById('room-type').value;
+    document.getElementById('booking-guests').value = document.getElementById('guests').value.charAt(0);
+    document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('reservation').addEventListener('submit', e => {
+    e.preventDefault();
+    if (document.getElementById('checkout').value <= document.getElementById('checkin').value) {
+      alert('Check-out date must be after check-in date.'); return;
+    }
+    document.getElementById('success').style.display = 'block';
+  });
+</script>
+</body>
+</html>
